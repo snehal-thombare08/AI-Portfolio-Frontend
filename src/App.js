@@ -26,17 +26,13 @@ const Portfolio = () => {
     setChatMessages(p => [...p, { role: "user", text: msg }]);
     setChatLoading(true);
     try {
-      const res = await fetch("https://ai-portfolio-qt8z.onrender.com/api/chat", {
+      const res = await fetch("http://localhost:3001/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514", max_tokens: 1000,
-          system: "You are Snehal Thombare portfolio assistant. She is a CS student from Pune seeking internships. Projects: File Compression Tool (C++ Huffman), CP Analyzer, Market Predictor, AI Portfolio. Skills: C++, Python, React, Node.js. Keep answers to 2 sentences.",
-          messages: [{ role: "user", content: msg }]
-        })
+        body: JSON.stringify({ message: msg })
       });
       const data = await res.json();
-      setChatMessages(p => [...p, { role: "assistant", text: data.content?.[0]?.text || "Try again!" }]);
+      setChatMessages(p => [...p, { role: "assistant", text: data.reply || "Try again!" }]);
     } catch { setChatMessages(p => [...p, { role: "assistant", text: "Network error!" }]); }
     setChatLoading(false);
   };
@@ -177,3 +173,5 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
+
