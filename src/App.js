@@ -68,7 +68,7 @@ const Portfolio = () => {
               style={{ background: "none", border: "none", cursor: "pointer", color: "#94a3b8", fontFamily: "DM Sans, sans-serif", fontSize: 14, fontWeight: 500 }}>{item}</button>
           ))}
         </div>
-        <a rel="noopener noreferrer" href="#" style={{ background: "linear-gradient(135deg, #a855f7, #ec4899)", color: "white", padding: "8px 20px", borderRadius: 8, textDecoration: "none", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 6 }}><FaDownload size={12} /> Resume</a>
+        <a href="#" style={{ background: "linear-gradient(135deg, #a855f7, #ec4899)", color: "white", padding: "8px 20px", borderRadius: 8, textDecoration: "none", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 6 }}><FaDownload size={12} /> Resume</a>
       </nav>
       <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "80px 40px 40px", position: "relative", zIndex: 1 }}>
         <motion.div initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} style={{ textAlign: "center", maxWidth: 700 }}>
@@ -99,8 +99,8 @@ const Portfolio = () => {
                 {p.tech.map((t, j) => <span key={j} style={{ background: p.color + "15", color: p.color, border: `1px solid ${p.color}30`, padding: "4px 12px", borderRadius: 20, fontSize: 12 }}>{t}</span>)}
               </div>
               <div style={{ display: "flex", gap: 16 }}>
-                <a rel="noopener noreferrer" href={p.link} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, color: "#94a3b8", fontSize: 13, textDecoration: "none" }}><FaGithub size={14} /> Code</a>
-                {p.demo !== "#" && <a rel="noopener noreferrer" href={p.demo} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, color: p.color, fontSize: 13, textDecoration: "none" }}><FaExternalLinkAlt size={12} /> Live Demo</a>}
+                <a href={p.link} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, color: "#94a3b8", fontSize: 13, textDecoration: "none" }}><FaGithub size={14} /> Code</a>
+                {p.demo !== "#" && <a href={p.demo} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, color: p.color, fontSize: 13, textDecoration: "none" }}><FaExternalLinkAlt size={12} /> Live Demo</a>}
               </div>
             </motion.div>
           ))}
@@ -173,6 +173,7 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
 
 
 
